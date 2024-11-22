@@ -1,23 +1,12 @@
 import React, { useState, useEffect } from "react";
 import ProductCard from "./ProductCard.jsx";
 import EmptyCard from "./EmptyCard.jsx";
+import useProductsFetch from "../CRUD/useProductsFetch.js";
 
 const Homepage = () => {
-  const [products, setProducts] = useState([]);
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch("http://localhost:5000/api/products/all");
-        const data = await response.json();
-        console.log(data);
-        setProducts(data.data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    fetchData();
-  }, []);
-
+  
+  const [products, setProducts] = useProductsFetch("http://localhost:5000/api/products/all");
+ 
   return (
     <div className="">
       {products.length > 0 ? (
@@ -27,6 +16,8 @@ const Homepage = () => {
             name={prod.name}
             price={prod.price}
             img={prod.img}
+            id={prod._id}
+            setProducts={setProducts}
           />
         ))
       ) : (
