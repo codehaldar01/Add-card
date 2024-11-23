@@ -2,9 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { MdDelete } from "react-icons/md";
 import { CiEdit } from "react-icons/ci";
+import EditCard from './EditCard.jsx'
+import { useNavigate } from "react-router-dom";
 const url = "http://localhost:5000/api/products";
 
 const ProductCard = ({ name, price, img, id, setProducts }) => {
+  const navigate = useNavigate();
   const handleDelete=async()=>{
     try {
       const del = await fetch(`${url}/${id}`,{method: "DELETE"});
@@ -19,6 +22,9 @@ const ProductCard = ({ name, price, img, id, setProducts }) => {
     } catch (error) {
       console.log(error)
     }
+  }
+  const handleUpdate = async()=>{
+    navigate(`/edit/${id}`)
   }
   return (
     <div className="w-full max-w-sm mx-auto p-4 hover:scale-110  mt-1 mb-1 transition-all duration-2000 ease-in-out">
@@ -39,7 +45,7 @@ const ProductCard = ({ name, price, img, id, setProducts }) => {
           </Link>
           <div className="m-2 font-md">
             <button>
-              <CiEdit />
+              <CiEdit onClick={ handleUpdate} />
             </button>
             <button onClick={ handleDelete }>
               <MdDelete />

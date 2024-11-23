@@ -12,6 +12,18 @@ export const getAllData = async(req,res)=>{
     }
 };
 
+export const particularProduct=async(req,res)=>{
+    const id = req.params.id;
+    try {
+        const curProd=await Product.findById(id);
+        console.log(curProd)
+        res.status(200).json({success: true, data: curProd});
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({success: false, message: "server error"})
+    }
+};
+
 export const createProduct = async(req,res)=>{
     const products=req.body;
     if(!products.name || !products.price || !products.img){
