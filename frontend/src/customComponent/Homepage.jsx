@@ -8,7 +8,7 @@ const Homepage = () => {
   const [products, setProducts] = useProductsFetch("http://localhost:5000/api/products/all");
  
   return (
-    <div className="">
+    <div className="dark:bg-gray-700 dark:text-white">
       {products.length > 0 ? (
         products.map((prod, ind) => (
           <ProductCard

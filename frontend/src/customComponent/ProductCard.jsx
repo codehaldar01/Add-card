@@ -27,7 +27,7 @@ const ProductCard = ({ name, price, img, id, setProducts }) => {
     navigate(`/edit/${id}`)
   }
   return (
-    <div className="w-full max-w-sm mx-auto p-4 hover:scale-110  mt-1 mb-1 transition-all duration-2000 ease-in-out">
+    <div className="w-full max-w-sm mx-auto p-4 hover:scale-110  mt-1 mb-1 transition-all duration-2000 ease-in-out dark:bg-gray-700 dark:text-white">
       <div className="border border-gray-300 rounded-lg overflow-hidden hover:shadow-md hover:shadow-purple ">
         <img
           src={img}
@@ -36,10 +36,10 @@ const ProductCard = ({ name, price, img, id, setProducts }) => {
         />
         <div className="p-4">
           <h2 className="text-lg font-bold">{name}</h2>
-          <p className="text-xl text-gray-700">Rs.{price}</p>
+          <p className="text-xl text-gray-700 dark:text-white">Rs.{price}</p>
         </div>
         <div className="flex justify-between items-center m-1">
-          <Link to="/LearnMore" className="text-blue-800">
+          <Link to="/LearnMore" className="text-blue-600">
             {" "}
             Learn More{" "}
           </Link>
