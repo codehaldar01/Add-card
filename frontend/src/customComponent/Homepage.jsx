@@ -5,7 +5,7 @@ import useProductsFetch from "../CRUD/useProductsFetch.js";
 
 const Homepage = () => {
   
-  const [products, setProducts] = useProductsFetch("http://localhost:5000/api/products/all");
+  const [products, setProducts] = useProductsFetch("https://add-card-7epj.onrender.com/api/products/all");
  
   return (
     <div className="dark:bg-gray-700 dark:text-white">
