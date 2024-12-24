@@ -17,7 +17,7 @@ const EditCard = () => {
   useEffect(() => {
     const fetchProdDetails = async () => {
       try {
-        const fetchCurProd = await fetch(`http://localhost:5000/api/products/${id}`);
+        const fetchCurProd = await fetch(`https://add-card-7epj.onrender.com/api/products/${id}`);
 
         if (fetchCurProd.ok) {
           const response = await fetchCurProd.json();
