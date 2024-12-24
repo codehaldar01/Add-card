@@ -4,7 +4,7 @@ import { MdDelete } from "react-icons/md";
 import { CiEdit } from "react-icons/ci";
 import EditCard from './EditCard.jsx'
 import { useNavigate } from "react-router-dom";
-const url = "http://localhost:5000/api/products";
+const url = "https://add-card-7epj.onrender.com/api/products";
 
 const ProductCard = ({ name, price, img, id, setProducts }) => {
   const navigate = useNavigate();
