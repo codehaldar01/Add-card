@@ -38,7 +38,7 @@ const CreateProduct = () => {
       <h1 className="font-extrabold text-xl bg-blue-300 rounded-md p-1">Create A New Product</h1>
       <div className="flex flex-col border-2 border-solid w-2/5 bg-purple-300">
         <input
-          className="border-solid border-2 border-black mt-1 mb-1"
+          className="border-solid border-2 border-black mt-1 mb-1 dark:text-white"
           placeholder="Product Label"
           name="name"
           type="text"
@@ -58,7 +58,7 @@ const CreateProduct = () => {
           }
         />
         <input
-          className="border-solid border-2 border-black mt-1 mb-1"
+          className="border-solid border-2 border-black mt-1 mb-1 dark:text-white"
           placeholder="Image URL"
           name="img"
           type="text"
